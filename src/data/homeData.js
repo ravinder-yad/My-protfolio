@@ -30,7 +30,7 @@ export const homeData = {
         github: "https://github.com/ravinder-yad",
         linkedin: "https://www.linkedin.com/in/ravindra-fullstack",
         instagram: "https://www.instagram.com/ravinder_khoshya/",
-        email: "mailto:hello@ravinderkumar.com"
+        email: "mailto:ravinderyadav092007@gmail.com"
     },
     image: {
         src: "/images/ravinder.png", // Will need an actual image or fallback

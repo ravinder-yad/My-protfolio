@@ -49,7 +49,7 @@ const Navbar = () => {
     { icon: <FaGithub />, url: 'https://github.com/ravinder-yad' },
     { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/ravindra-fullstack' },
     { icon: <FaInstagram />, url: 'https://www.instagram.com/ravinder_khoshya/' },
-    { icon: <FaEnvelope />, url: 'mailto:hello@ravinderkumar.com' },
+    { icon: <FaEnvelope />, url: 'mailto:ravinderyadav092007@gmail.com' },
   ];
 
   const toggleTheme = () => {
