@@ -21,3 +21,60 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
   }
 }
+
+/* 
+  Global Dark Mode Overrides
+  Because the theme was built heavily with hardcoded 'bg-white', 'text-gray-900', etc.,
+  this safely forces those exact utilities to invert when dark mode is toggled.
+*/
+.dark body {
+  @apply bg-gray-950 text-white !important;
+}
+
+.dark .bg-white,
+.dark .bg-gray-50 {
+  @apply bg-gray-900 border-gray-800 !important;
+}
+
+.dark .bg-gray-100 {
+  @apply bg-gray-800 !important;
+}
+
+.dark .text-gray-900,
+.dark .text-textMain {
+  @apply text-white !important;
+}
+
+.dark .text-gray-800 {
+  @apply text-gray-200 !important;
+}
+
+.dark .text-gray-600,
+.dark .text-gray-500,
+.dark .text-textGray {
+  @apply text-gray-400 !important;
+}
+
+.dark .border-gray-100,
+.dark .border-gray-200,
+.dark .border-borderGray {
+  @apply border-gray-800 !important;
+}
+
+/* Fix specific backgrounds in dark mode (like the hero pattern and navbar) */
+.dark .bg-\[linear-gradient\(\.\.\.\)\] {
+  opacity: 0.1;
+}
+
+.dark nav.bg-white\/70 {
+  @apply bg-gray-950/70 border-gray-800 !important;
+}
+
+.dark .glass-card,
+.dark .glass {
+  @apply bg-gray-900/80 border-gray-800 !important;
+}
+
+.dark .bg-blue-50 {
+  @apply bg-blue-900/30 text-blue-400 border-blue-900/50 !important;
+}
