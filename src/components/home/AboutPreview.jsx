@@ -39,7 +39,7 @@ const AboutPreview = () => {
   const { personalInfo } = portfolioData;
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden" id="about">
+    <section className="py-24 bg-gray-50 dark:bg-slate-800/50 relative overflow-hidden" id="about">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <SectionTitle title="About Me" subtitle="A brief introduction to who I am" />
         
@@ -67,12 +67,12 @@ const AboutPreview = () => {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -right-6 md:bottom-10 md:-right-10 bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100 z-20"
+              className="absolute -bottom-6 -right-6 md:bottom-10 md:-right-10 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-slate-800 z-20"
             >
               <div className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2 leading-none">
                 <Counter from={0} to={1} duration={2000} suffix="+" />
               </div>
-              <div className="text-xs text-gray-500 font-bold uppercase tracking-widest leading-tight">Year of<br/>Experience</div>
+              <div className="text-xs text-gray-500 dark:text-slate-400 font-bold uppercase tracking-widest leading-tight">Year of<br/>Experience</div>
             </motion.div>
           </motion.div>
 
@@ -85,14 +85,14 @@ const AboutPreview = () => {
             className="w-full lg:w-7/12 flex flex-col gap-8"
           >
             <div>
-              <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+              <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
                 Hi, I'm {personalInfo.name}.<br/>
                 <span className="text-blue-600">{personalInfo.title}</span>
               </h3>
               
-              <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm relative overflow-hidden mb-6">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800 shadow-sm relative overflow-hidden mb-6">
                 <div className="absolute top-0 left-0 w-2 h-full bg-blue-600"></div>
-                <p className="text-lg text-gray-600 font-medium leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-slate-400 font-medium leading-relaxed">
                   {personalInfo.summary}
                 </p>
               </div>
@@ -100,20 +100,20 @@ const AboutPreview = () => {
 
             {/* Bento Grid Stats */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all group">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-800 hover:shadow-md hover:border-blue-200 transition-all group">
                 <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2">
                   <Counter from={0} to={projectsData.length} duration={2000} suffix="+" />
                 </div>
-                <div className="text-gray-900 font-bold text-lg">Projects Built</div>
-                <div className="text-sm text-gray-500 font-medium mt-1">Full-stack & UI clones</div>
+                <div className="text-gray-900 dark:text-white font-bold text-lg">Projects Built</div>
+                <div className="text-sm text-gray-500 dark:text-slate-400 font-medium mt-1">Full-stack & UI clones</div>
               </div>
               
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all group">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-800 hover:shadow-md hover:border-blue-200 transition-all group">
                 <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-2">
                   <Counter from={0} to={100} duration={2500} suffix="%" />
                 </div>
-                <div className="text-gray-900 font-bold text-lg">Responsive UI</div>
-                <div className="text-sm text-gray-500 font-medium mt-1">Pixel perfect on any device</div>
+                <div className="text-gray-900 dark:text-white font-bold text-lg">Responsive UI</div>
+                <div className="text-sm text-gray-500 dark:text-slate-400 font-medium mt-1">Pixel perfect on any device</div>
               </div>
             </div>
 

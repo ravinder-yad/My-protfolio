@@ -6,7 +6,7 @@ const About = () => {
   const yBg = useTransform(scrollY, [0, 1000], [0, 200]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white relative overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 relative overflow-hidden">
       
       {/* Global Page Background Effects */}
       <motion.div 

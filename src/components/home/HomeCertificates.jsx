@@ -30,7 +30,7 @@ const HomeCertificates = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-24 bg-gray-50 dark:bg-slate-800/50 relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1400px]">
         
         {/* Header with Top-Right Button */}
@@ -42,7 +42,7 @@ const HomeCertificates = () => {
           
           <Link 
             to="/certificates"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-bold border-2 border-gray-100 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow-lg hover:shadow-blue-500/20 whitespace-nowrap"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-900 text-gray-900 dark:text-white font-bold border-2 border-gray-100 dark:border-slate-800 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow-lg hover:shadow-blue-500/20 whitespace-nowrap"
           >
             View All Certificates <FiArrowRight />
           </Link>
@@ -56,10 +56,10 @@ const HomeCertificates = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200 transition-all duration-300"
+              className="group relative bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-slate-800 hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200 transition-all duration-300"
             >
               {/* Image Container */}
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-50 relative border border-gray-100 mb-6">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-50 dark:bg-slate-800/50 relative border border-gray-100 dark:border-slate-800 mb-6">
                 <img 
                   src={cert.image} 
                   alt={cert.title} 
@@ -80,7 +80,7 @@ const HomeCertificates = () => {
                     {cert.date}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
                   {cert.title}
                 </h3>
               </div>

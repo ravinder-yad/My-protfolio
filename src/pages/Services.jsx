@@ -31,7 +31,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white relative overflow-hidden pt-32 pb-20 lg:pt-0 lg:pb-0 justify-center">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 relative overflow-hidden pt-32 pb-20 lg:pt-0 lg:pb-0 justify-center">
       
       {/* Global Page Background Effects */}
       <motion.div 
@@ -62,10 +62,10 @@ const Services = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-4/12"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6 uppercase tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6 uppercase tracking-tight">
               My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Services.</span>
             </h1>
-            <p className="text-base md:text-lg text-gray-600 font-medium leading-relaxed max-w-md">
+            <p className="text-base md:text-lg text-gray-600 dark:text-slate-400 font-medium leading-relaxed max-w-md">
               I offer a range of specialized web development services to help bring ideas to life, from clean, responsive websites to complex, scalable web applications.
             </p>
             <div className="w-24 h-1 bg-blue-600 mt-8 rounded-full"></div>
@@ -84,8 +84,8 @@ const Services = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className={`group cursor-pointer bg-white p-8 md:p-10 rounded-[2rem] border transition-all duration-500 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
-                    isActive ? 'border-blue-300 shadow-[0_20px_50px_rgba(37,99,235,0.15)] bg-blue-50/10' : 'border-gray-100 hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200'
+                  className={`group cursor-pointer bg-white dark:bg-slate-900 p-8 md:p-10 rounded-[2rem] border transition-all duration-500 relative overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
+                    isActive ? 'border-blue-300 shadow-[0_20px_50px_rgba(37,99,235,0.15)] bg-blue-50/10' : 'border-gray-100 dark:border-slate-800 hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200'
                   }`}
                 >
                   {/* Inner Glow on Hover / Active */}
@@ -112,10 +112,10 @@ const Services = () => {
                     </div>
                     
                     {/* Content */}
-                    <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${isActive ? 'text-blue-600' : 'text-gray-900 group-hover:text-blue-600'}`}>
+                    <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${isActive ? 'text-blue-600' : 'text-gray-900 dark:text-white group-hover:text-blue-600'}`}>
                       {service.title}
                     </h3>
-                    <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                    <p className="text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                       {service.description}
                     </p>
                   </div>

@@ -32,7 +32,7 @@ const TypewriterText = ({ texts }) => {
   }, [currentText, isDeleting, currentIndex, texts]);
 
   return (
-    <span className="text-2xl md:text-3xl font-mono text-textGray">
+    <span className="text-2xl md:text-3xl font-mono text-textGray dark:text-slate-400">
       {currentText}
       <span className="animate-ping text-primary font-bold">|</span>
     </span>
@@ -65,7 +65,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-white dark:bg-slate-900">
       {/* Background Effects */}
       <motion.div 
         className="absolute inset-0 z-0 pointer-events-none"
@@ -114,7 +114,7 @@ const Hero = () => {
               {hero.greeting}
             </motion.div>
             
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-textMain tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-textMain dark:text-white tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 filter drop-shadow-[0_0_15px_rgba(37,99,235,0.3)]">
                 {hero.name.split(' ')[0]}
               </span>
@@ -128,7 +128,7 @@ const Hero = () => {
               <TypewriterText texts={hero.roles} />
             </div>
 
-            <p className="text-lg md:text-xl text-textGray mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-textGray dark:text-slate-400 mb-10 max-w-2xl leading-relaxed">
               {hero.description}
             </p>
 
@@ -148,7 +148,7 @@ const Hero = () => {
                 <motion.button 
                   whileHover={{ y: -5, scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto px-8 py-4 bg-white/80 backdrop-blur-sm border border-gray-200 text-textMain font-bold rounded-full hover:border-primary hover:text-primary shadow-sm hover:shadow-[0_10px_30px_-10px_rgba(37,99,235,0.2)] transition-all"
+                  className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-900/80 backdrop-blur-sm border border-gray-200 dark:border-slate-700 text-textMain dark:text-white font-bold rounded-full hover:border-primary hover:text-primary shadow-sm hover:shadow-[0_10px_30px_-10px_rgba(37,99,235,0.2)] transition-all"
                 >
                   {buttons.secondary.text}
                 </motion.button>
@@ -169,7 +169,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
-                  className="text-2xl text-textGray hover:text-primary transition-colors filter hover:drop-shadow-[0_0_8px_rgba(37,99,235,0.6)]"
+                  className="text-2xl text-textGray dark:text-slate-400 hover:text-primary transition-colors filter hover:drop-shadow-[0_0_8px_rgba(37,99,235,0.6)]"
                 >
                   {social.icon}
                 </motion.a>
@@ -195,7 +195,7 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-56 h-56 md:w-80 md:h-80 rounded-full bg-white shadow-[0_20px_50px_rgba(37,99,235,0.1)] border-4 border-white overflow-hidden flex justify-center items-end"
+              className="relative w-56 h-56 md:w-80 md:h-80 rounded-full bg-white dark:bg-slate-900 shadow-[0_20px_50px_rgba(37,99,235,0.1)] border-4 border-white overflow-hidden flex justify-center items-end"
             >
               {/* Fallback avatar if no image */}
               <div className="w-full h-full bg-gradient-to-b from-blue-50 to-blue-100 flex items-center justify-center">
@@ -235,7 +235,7 @@ const FloatingIcon = ({ icon, angle, radius, desktopRadius, duration, reverse = 
 
   return (
     <motion.div
-      className="absolute w-10 h-10 md:w-12 md:h-12 bg-white/80 backdrop-blur-md rounded-xl shadow-lg border border-white flex items-center justify-center text-xl md:text-2xl z-20"
+      className="absolute w-10 h-10 md:w-12 md:h-12 bg-white dark:bg-slate-900/80 backdrop-blur-md rounded-xl shadow-lg border border-white flex items-center justify-center text-xl md:text-2xl z-20"
       animate={{
         rotate: reverse ? -360 : 360,
       }}

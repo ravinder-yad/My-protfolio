@@ -20,11 +20,11 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-gray-50 dark:bg-slate-800/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-textMain mb-4">Client Feedback</h2>
-          <p className="text-textGray">What people say about my work.</p>
+          <h2 className="text-4xl font-bold text-textMain dark:text-white mb-4">Client Feedback</h2>
+          <p className="text-textGray dark:text-slate-400">What people say about my work.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -35,16 +35,16 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="glass-card bg-white p-8 rounded-3xl relative"
+              className="glass-card bg-white dark:bg-slate-900 p-8 rounded-3xl relative"
             >
               <FaQuoteLeft className="text-4xl text-blue-100 absolute top-8 right-8" />
-              <p className="text-textMain text-lg italic mb-8 relative z-10">"{item.text}"</p>
+              <p className="text-textMain dark:text-white text-lg italic mb-8 relative z-10">"{item.text}"</p>
               
               <div className="flex items-center">
                 <img src={item.avatar} alt={item.name} className="w-14 h-14 rounded-full mr-4 border-2 border-primary" />
                 <div>
-                  <h4 className="font-bold text-textMain">{item.name}</h4>
-                  <p className="text-sm text-textGray">{item.role}</p>
+                  <h4 className="font-bold text-textMain dark:text-white">{item.name}</h4>
+                  <p className="text-sm text-textGray dark:text-slate-400">{item.role}</p>
                 </div>
               </div>
             </motion.div>

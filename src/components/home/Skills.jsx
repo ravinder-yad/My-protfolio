@@ -28,7 +28,7 @@ const getIconForSkill = (skillName) => {
   
   // Backend & Database
   if (name.includes('node')) return <FaNodeJs className="text-[#339933]" />;
-  if (name.includes('express')) return <SiExpress className="text-gray-800" />;
+  if (name.includes('express')) return <SiExpress className="text-gray-800 dark:text-slate-200" />;
   if (name.includes('mongodb')) return <SiMongodb className="text-[#47A248]" />;
   if (name.includes('sql') || name.includes('database')) return <FaDatabase className="text-[#00758F]" />;
   if (name.includes('api')) return <FaNetworkWired className="text-[#0ea5e9]" />;
@@ -64,7 +64,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="py-24 bg-white relative" id="skills">
+    <section className="py-24 bg-white dark:bg-slate-900 relative" id="skills">
       <div className="container mx-auto px-6 max-w-[1400px]">
         <SectionTitle title="Technical Skills" subtitle="The building blocks of my web experiences" />
         
@@ -75,9 +75,9 @@ const Skills = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="bg-gray-50/50 p-8 rounded-[2rem] border border-gray-100 shadow-sm"
+              className="bg-gray-50 dark:bg-slate-800/50/50 p-8 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-sm"
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
                 <span className="w-2 h-8 bg-blue-600 rounded-full"></span>
                 {category.title}
               </h3>
@@ -91,12 +91,12 @@ const Skills = () => {
                     key={i}
                     variants={itemVariants}
                     whileHover={{ y: -4, scale: 1.02 }}
-                    className="group flex items-center gap-3 p-4 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 hover:border-blue-200 hover:shadow-[0_10px_30px_rgba(37,99,235,0.08)] transition-all duration-300 cursor-pointer"
+                    className="group flex items-center gap-3 p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 dark:border-slate-800 hover:border-blue-200 hover:shadow-[0_10px_30px_rgba(37,99,235,0.08)] transition-all duration-300 cursor-pointer"
                   >
                     <div className="text-3xl group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
                       {getIconForSkill(skill)}
                     </div>
-                    <span className="font-bold text-xs uppercase tracking-wide text-gray-700 group-hover:text-blue-600 transition-colors">
+                    <span className="font-bold text-xs uppercase tracking-wide text-gray-700 dark:text-slate-300 group-hover:text-blue-600 transition-colors">
                       {skill}
                     </span>
                   </motion.div>
@@ -110,7 +110,7 @@ const Skills = () => {
         <div className="mt-16 text-center">
           <Link 
             to="/skills"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 font-bold border-2 border-gray-100 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow-lg hover:shadow-blue-500/20"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-slate-900 text-gray-900 dark:text-white font-bold border-2 border-gray-100 dark:border-slate-800 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow-lg hover:shadow-blue-500/20"
           >
             Explore All My Skills <FiArrowRight />
           </Link>

@@ -16,9 +16,9 @@ const TechStackSlider = () => {
   const infiniteTechs = [...techs, ...techs, ...techs, ...techs];
 
   return (
-    <section className="py-12 bg-white border-y border-gray-100 overflow-hidden relative">
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+    <section className="py-12 bg-white dark:bg-slate-900 border-y border-gray-100 dark:border-slate-800 overflow-hidden relative">
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10"></div>
       
       <motion.div
         className="flex space-x-12 w-max"
@@ -35,7 +35,7 @@ const TechStackSlider = () => {
         {infiniteTechs.map((tech, index) => (
           <div 
             key={index} 
-            className="flex items-center space-x-3 text-xl font-bold text-textGray opacity-70 hover:opacity-100 transition-opacity"
+            className="flex items-center space-x-3 text-xl font-bold text-textGray dark:text-slate-400 opacity-70 hover:opacity-100 transition-opacity"
           >
             <span className="text-3xl">{tech.icon}</span>
             <span>{tech.name}</span>

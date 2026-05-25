@@ -17,14 +17,14 @@ const EducationCards = () => {
   ];
 
   return (
-    <section className="py-24 relative z-10 bg-gray-50">
+    <section className="py-24 relative z-10 bg-gray-50 dark:bg-slate-800/50">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-extrabold text-textMain mb-4"
+            className="text-4xl md:text-5xl font-extrabold text-textMain dark:text-white mb-4"
           >
             Education & Training
           </motion.h2>
@@ -39,7 +39,7 @@ const EducationCards = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="group relative bg-white/60 backdrop-blur-md rounded-[2.5rem] p-10 border border-gray-100 shadow-sm hover:shadow-[0_20px_40px_rgba(37,99,235,0.08)] transition-all duration-500 overflow-hidden"
+              className="group relative bg-white dark:bg-slate-900/60 backdrop-blur-md rounded-[2.5rem] p-10 border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-[0_20px_40px_rgba(37,99,235,0.08)] transition-all duration-500 overflow-hidden"
             >
               {/* Gradient Border Glow Effect */}
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-100 rounded-[2.5rem] transition-colors duration-500"></div>
@@ -48,11 +48,11 @@ const EducationCards = () => {
               <div className="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-blue-100 to-indigo-50 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative z-10">
-                <span className="inline-block px-4 py-1.5 bg-gray-100 text-textGray font-bold rounded-lg text-sm mb-6 tracking-wide">
+                <span className="inline-block px-4 py-1.5 bg-gray-100 dark:bg-slate-800 text-textGray dark:text-slate-400 font-bold rounded-lg text-sm mb-6 tracking-wide">
                   {edu.duration}
                 </span>
                 
-                <h3 className="text-2xl md:text-3xl font-extrabold text-textMain mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-textMain dark:text-white mb-2 group-hover:text-primary transition-colors">
                   {edu.degree}
                 </h3>
                 
@@ -60,7 +60,7 @@ const EducationCards = () => {
                   {edu.institute}
                 </h4>
                 
-                <p className="text-textGray leading-relaxed text-lg">
+                <p className="text-textGray dark:text-slate-400 leading-relaxed text-lg">
                   {edu.description}
                 </p>
               </div>

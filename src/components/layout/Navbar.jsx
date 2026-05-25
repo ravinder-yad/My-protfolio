@@ -70,7 +70,7 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed w-full z-50 transition-all duration-500 ${
           scrolled 
-            ? 'h-[70px] md:h-[75px] xl:h-[80px] bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm' 
+            ? 'h-[70px] md:h-[75px] xl:h-[80px] bg-white dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/20 shadow-sm' 
             : 'h-[80px] md:h-[85px] xl:h-[90px] bg-transparent'
         }`}
       >
@@ -78,7 +78,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <Link to="/" className="group relative flex items-center h-full">
-            <span className="text-2xl md:text-3xl font-extrabold tracking-tighter text-textMain group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300 transform group-hover:rotate-3">
+            <span className="text-2xl md:text-3xl font-extrabold tracking-tighter text-textMain dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300 transform group-hover:rotate-3">
               &lt;RY /&gt;
             </span>
           </Link>
@@ -91,7 +91,7 @@ const Navbar = () => {
                 to={link.path}
                 className={({ isActive }) =>
                   `relative px-3 py-2 text-[15px] font-medium tracking-wide transition-all duration-300 group overflow-hidden ${
-                    isActive ? 'text-primary' : 'text-textMain hover:text-primary'
+                    isActive ? 'text-primary' : 'text-textMain dark:text-white hover:text-primary'
                   }`
                 }
               >
@@ -123,7 +123,7 @@ const Navbar = () => {
                   href={social.url} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-textGray hover:text-primary hover:border-primary hover:bg-blue-50 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 dark:border-slate-700 text-textGray dark:text-slate-400 hover:text-primary hover:border-primary hover:bg-blue-50 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(37,99,235,0.3)]"
                 >
                   {social.icon}
                 </a>
@@ -133,7 +133,7 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <button 
               onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-textMain hover:bg-gray-50 transition-all duration-500 hover:rotate-180"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 dark:border-slate-700 text-textMain dark:text-white hover:bg-gray-50 dark:bg-slate-800/50 transition-all duration-500 hover:rotate-180"
             >
               {theme === 'light' ? <FiMoon className="text-lg" /> : <FiSun className="text-lg text-yellow-500" />}
             </button>
@@ -151,7 +151,7 @@ const Navbar = () => {
           <div className="xl:hidden flex items-center">
             <button 
               onClick={() => setIsOpen(true)} 
-              className="text-3xl text-textMain focus:outline-none hover:text-primary transition-colors"
+              className="text-3xl text-textMain dark:text-white focus:outline-none hover:text-primary transition-colors"
             >
               <FiMenu />
             </button>
@@ -167,16 +167,16 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.4, ease: 'easeInOut' }}
-            className="fixed inset-0 z-[100] bg-white/95 backdrop-blur-2xl flex flex-col justify-between"
+            className="fixed inset-0 z-[100] bg-white dark:bg-slate-900/95 backdrop-blur-2xl flex flex-col justify-between"
           >
             {/* Mobile Header */}
-            <div className="h-[70px] flex items-center justify-between px-6 border-b border-gray-100">
+            <div className="h-[70px] flex items-center justify-between px-6 border-b border-gray-100 dark:border-slate-800">
               <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                 &lt;RY /&gt;
               </span>
               <button 
                 onClick={() => setIsOpen(false)} 
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-textMain text-2xl hover:bg-red-50 hover:text-red-500 transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-slate-800 text-textMain dark:text-white text-2xl hover:bg-red-50 hover:text-red-500 transition-colors"
               >
                 <FiX />
               </button>
@@ -196,7 +196,7 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
                       `text-3xl sm:text-4xl font-extrabold uppercase tracking-widest transition-colors ${
-                        isActive ? 'text-primary' : 'text-textMain hover:text-primary'
+                        isActive ? 'text-primary' : 'text-textMain dark:text-white hover:text-primary'
                       }`
                     }
                   >
@@ -211,7 +211,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="px-6 py-8 border-t border-gray-100 flex flex-col items-center space-y-6 bg-gray-50/50"
+              className="px-6 py-8 border-t border-gray-100 dark:border-slate-800 flex flex-col items-center space-y-6 bg-gray-50 dark:bg-slate-800/50/50"
             >
               <div className="flex space-x-6">
                 {socialLinks.map((social, index) => (
@@ -220,7 +220,7 @@ const Navbar = () => {
                     href={social.url} 
                     target="_blank" 
                     rel="noreferrer"
-                    className="text-2xl text-textGray hover:text-primary hover:scale-110 transition-all"
+                    className="text-2xl text-textGray dark:text-slate-400 hover:text-primary hover:scale-110 transition-all"
                   >
                     {social.icon}
                   </a>

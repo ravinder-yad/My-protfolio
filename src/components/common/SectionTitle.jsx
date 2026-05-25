@@ -9,11 +9,11 @@ const SectionTitle = ({ title, subtitle }) => {
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold text-textMain mb-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-textMain dark:text-white mb-4">
           {title}
         </h2>
         {subtitle && (
-          <p className="text-xl text-textGray">
+          <p className="text-xl text-textGray dark:text-slate-400">
             {subtitle}
           </p>
         )}

@@ -46,14 +46,14 @@ const SkillCard = ({ title, description, icons }) => {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
       whileHover={{ translateY: -8 }}
-      className="group bg-white/70 backdrop-blur-xl p-8 rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(37,99,235,0.1)] hover:border-blue-200 transition-all duration-500 relative overflow-hidden"
+      className="group bg-white dark:bg-slate-900/70 backdrop-blur-xl p-8 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(37,99,235,0.1)] hover:border-blue-200 transition-all duration-500 relative overflow-hidden"
     >
       {/* Glow Effect */}
       <div className="absolute -inset-[100px] bg-gradient-to-r from-blue-100/30 to-indigo-100/30 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 pointer-events-none"></div>
 
       <div className="relative z-10">
-        <h3 className="text-2xl font-bold text-textMain mb-3 group-hover:text-primary transition-colors">{title}</h3>
-        <p className="text-textGray mb-8 leading-relaxed">{description}</p>
+        <h3 className="text-2xl font-bold text-textMain dark:text-white mb-3 group-hover:text-primary transition-colors">{title}</h3>
+        <p className="text-textGray dark:text-slate-400 mb-8 leading-relaxed">{description}</p>
 
         <div className="grid grid-cols-3 md:grid-cols-5 gap-6">
           {icons.map((item, index) => (
@@ -62,10 +62,10 @@ const SkillCard = ({ title, description, icons }) => {
               whileHover={{ scale: 1.15, rotate: 5 }}
               className="flex flex-col items-center justify-center space-y-2 cursor-pointer"
             >
-              <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-3xl shadow-sm border border-gray-100 group-hover:shadow-md transition-shadow group-hover:border-blue-100">
+              <div className="w-14 h-14 bg-gray-50 dark:bg-slate-800/50 rounded-2xl flex items-center justify-center text-3xl shadow-sm border border-gray-100 dark:border-slate-800 group-hover:shadow-md transition-shadow group-hover:border-blue-100">
                 {item.icon}
               </div>
-              <span className="text-xs font-semibold text-textGray group-hover:text-primary transition-colors">{item.name}</span>
+              <span className="text-xs font-semibold text-textGray dark:text-slate-400 group-hover:text-primary transition-colors">{item.name}</span>
             </motion.div>
           ))}
         </div>

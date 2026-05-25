@@ -22,7 +22,7 @@ const HomeContact = () => {
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="contact">
+    <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden" id="contact">
       <div className="container mx-auto px-6 max-w-[1400px]">
         
         <SectionTitle title="Get In Touch" subtitle="Let's build something amazing together" />
@@ -37,21 +37,21 @@ const HomeContact = () => {
             transition={{ delay: 0.2 }} 
             className="w-full lg:w-1/3"
           >
-            <div className="bg-gray-50 border border-gray-100 p-10 rounded-3xl h-full flex flex-col justify-center relative overflow-hidden shadow-sm">
+            <div className="bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-800 p-10 rounded-3xl h-full flex flex-col justify-center relative overflow-hidden shadow-sm">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 z-0"></div>
               
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Contact Information</h3>
                 
                 <div className="space-y-8">
                   {/* Email */}
                   <div className="flex items-start group">
-                    <div className="w-12 h-12 bg-white border border-gray-200 text-blue-600 rounded-full flex items-center justify-center text-xl shrink-0 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all shadow-sm">
+                    <div className="w-12 h-12 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 text-blue-600 rounded-full flex items-center justify-center text-xl shrink-0 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all shadow-sm">
                       <FaEnvelope />
                     </div>
                     <div className="ml-5 pt-1">
-                      <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Email</p>
-                      <a href={`mailto:${personalInfo.email}`} className="text-base font-bold text-gray-900 hover:text-blue-600 transition-colors break-all">
+                      <p className="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-widest mb-1">Email</p>
+                      <a href={`mailto:${personalInfo.email}`} className="text-base font-bold text-gray-900 dark:text-white hover:text-blue-600 transition-colors break-all">
                         {personalInfo.email}
                       </a>
                     </div>
@@ -59,23 +59,23 @@ const HomeContact = () => {
                   
                   {/* Phone */}
                   <div className="flex items-start group">
-                    <div className="w-12 h-12 bg-white border border-gray-200 text-blue-600 rounded-full flex items-center justify-center text-xl shrink-0 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all shadow-sm">
+                    <div className="w-12 h-12 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 text-blue-600 rounded-full flex items-center justify-center text-xl shrink-0 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all shadow-sm">
                       <FaPhoneAlt />
                     </div>
                     <div className="ml-5 pt-1">
-                      <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Phone</p>
-                      <p className="text-base font-bold text-gray-900">{personalInfo.phone}</p>
+                      <p className="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-widest mb-1">Phone</p>
+                      <p className="text-base font-bold text-gray-900 dark:text-white">{personalInfo.phone}</p>
                     </div>
                   </div>
 
                   {/* Location */}
                   <div className="flex items-start group">
-                    <div className="w-12 h-12 bg-white border border-gray-200 text-blue-600 rounded-full flex items-center justify-center text-xl shrink-0 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all shadow-sm">
+                    <div className="w-12 h-12 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 text-blue-600 rounded-full flex items-center justify-center text-xl shrink-0 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all shadow-sm">
                       <FaMapMarkerAlt />
                     </div>
                     <div className="ml-5 pt-1">
-                      <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Location</p>
-                      <p className="text-base font-bold text-gray-900">{personalInfo.location}</p>
+                      <p className="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-widest mb-1">Location</p>
+                      <p className="text-base font-bold text-gray-900 dark:text-white">{personalInfo.location}</p>
                     </div>
                   </div>
                 </div>
@@ -91,36 +91,36 @@ const HomeContact = () => {
             transition={{ delay: 0.4 }} 
             className="w-full lg:w-2/3"
           >
-            <div className="bg-white p-10 rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(37,99,235,0.08)] transition-all duration-300 h-full flex flex-col justify-center">
-              <h3 className="text-3xl font-extrabold text-gray-900 mb-8">Send me a message</h3>
+            <div className="bg-white dark:bg-slate-900 p-10 rounded-3xl border border-gray-100 dark:border-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(37,99,235,0.08)] transition-all duration-300 h-full flex flex-col justify-center">
+              <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">Send me a message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-2">Your Name</label>
+                    <label className="block text-xs font-bold text-gray-600 dark:text-slate-400 uppercase tracking-widest mb-2">Your Name</label>
                     <input 
                       required
                       type="text" 
-                      className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 placeholder-gray-400" 
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
                       placeholder="John Doe" 
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-2">Email Address</label>
+                    <label className="block text-xs font-bold text-gray-600 dark:text-slate-400 uppercase tracking-widest mb-2">Email Address</label>
                     <input 
                       required
                       type="email" 
-                      className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 placeholder-gray-400" 
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
                       placeholder="john@example.com" 
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-2">Message</label>
+                  <label className="block text-xs font-bold text-gray-600 dark:text-slate-400 uppercase tracking-widest mb-2">Message</label>
                   <textarea 
                     required
                     rows="4" 
-                    className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 placeholder-gray-400 resize-none" 
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400 resize-none" 
                     placeholder="Tell me about your project..."
                   ></textarea>
                 </div>

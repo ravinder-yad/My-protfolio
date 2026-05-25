@@ -30,7 +30,7 @@ const ExperienceTimeline = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="journey">
+    <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden" id="journey">
       <div className="container mx-auto px-6 max-w-4xl relative z-10">
         <SectionTitle title="My Journey" subtitle="The timeline of my growth and education" />
 
@@ -55,14 +55,14 @@ const ExperienceTimeline = () => {
                 </div>
 
                 {/* Content Box */}
-                <div className="bg-white p-6 md:p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_10px_30px_rgba(37,99,235,0.08)] hover:border-blue-200 transition-all duration-300 group">
+                <div className="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 dark:border-slate-800 hover:shadow-[0_10px_30px_rgba(37,99,235,0.08)] hover:border-blue-200 transition-all duration-300 group">
                   <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 font-bold tracking-widest rounded-full text-xs uppercase mb-3 border border-blue-100/50 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                     {exp.year}
                   </span>
-                  <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                  <h4 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors duration-300">
                     {exp.title}
                   </h4>
-                  <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                  <p className="text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                     {exp.description}
                   </p>
                 </div>

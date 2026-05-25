@@ -41,7 +41,7 @@ const HomeServices = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1400px]">
         <SectionTitle title="What I Do" subtitle="Services designed to elevate your digital presence" />
 
@@ -58,8 +58,8 @@ const HomeServices = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -8 }}
-                className={`cursor-pointer group relative bg-white rounded-3xl p-8 border transition-all duration-500 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
-                  isActive ? 'border-blue-300 shadow-[0_20px_50px_rgba(37,99,235,0.15)] bg-blue-50/10' : 'border-gray-100 hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200'
+                className={`cursor-pointer group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border transition-all duration-500 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${
+                  isActive ? 'border-blue-300 shadow-[0_20px_50px_rgba(37,99,235,0.15)] bg-blue-50/10' : 'border-gray-100 dark:border-slate-800 hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200'
                 }`}
               >
                 {/* Glow Effect */}
@@ -84,10 +84,10 @@ const HomeServices = () => {
                     </motion.div>
                   </div>
                   
-                  <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${isActive ? 'text-blue-600' : 'text-gray-900 group-hover:text-blue-600'}`}>
+                  <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${isActive ? 'text-blue-600' : 'text-gray-900 dark:text-white group-hover:text-blue-600'}`}>
                     {service.title}
                   </h3>
-                  <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                  <p className="text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
                     {service.description}
                   </p>
                 </div>

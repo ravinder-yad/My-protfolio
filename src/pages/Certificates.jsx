@@ -56,17 +56,17 @@ const Certificates = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-white">
+    <div className="pt-32 pb-24 min-h-screen bg-white dark:bg-slate-900">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-extrabold text-gray-900 mb-6 uppercase tracking-tight">
+          <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-6 uppercase tracking-tight">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Certificates</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-gray-600 dark:text-slate-400 max-w-2xl mx-auto font-medium">
             Professional certifications and achievements showcasing my continuous learning and technical expertise.
           </p>
           <div className="w-24 h-1 bg-blue-600 mx-auto mt-8 rounded-full"></div>
@@ -81,9 +81,9 @@ const Certificates = () => {
               transition={{ delay: index * 0.1, duration: 0.4 }}
               key={cert.id}
               onClick={() => setSelectedImage(cert.image)}
-              className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col"
+              className="group cursor-pointer bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-500 flex flex-col"
             >
-              <div className="relative overflow-hidden bg-gray-50 aspect-[4/3] flex items-center justify-center p-4">
+              <div className="relative overflow-hidden bg-gray-50 dark:bg-slate-800/50 aspect-[4/3] flex items-center justify-center p-4">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
                   <span className="text-white font-bold text-lg tracking-widest bg-black/30 px-6 py-2 rounded-full backdrop-blur-sm border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     Click to View
@@ -96,7 +96,7 @@ const Certificates = () => {
                 />
               </div>
               <div className="p-6 text-center border-t border-gray-50 flex-grow flex flex-col justify-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
                   {cert.title}
                 </h3>
                 <p className="text-sm font-semibold text-blue-500 uppercase tracking-widest">
@@ -122,7 +122,7 @@ const Certificates = () => {
               {/* Close Button */}
               <button 
                 onClick={(e) => { e.stopPropagation(); setSelectedImage(null); }}
-                className="absolute top-6 right-6 md:top-10 md:right-10 w-12 h-12 bg-white/20 hover:bg-red-500 text-white rounded-full flex items-center justify-center transition-colors border border-white/30 z-[10000] shadow-lg"
+                className="absolute top-6 right-6 md:top-10 md:right-10 w-12 h-12 bg-white dark:bg-slate-900/20 hover:bg-red-500 text-white rounded-full flex items-center justify-center transition-colors border border-white/30 z-[10000] shadow-lg"
               >
                 <FaTimes className="text-xl" />
               </button>

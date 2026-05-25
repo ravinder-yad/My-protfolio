@@ -8,7 +8,7 @@ import CursorGlow from './components/common/CursorGlow';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-bgMain text-textMain relative overflow-hidden">
+      <div className="flex flex-col min-h-screen bg-bgMain text-textMain dark:text-white relative overflow-hidden">
         <CursorGlow />
         <Navbar />
         <main className="flex-grow z-10">

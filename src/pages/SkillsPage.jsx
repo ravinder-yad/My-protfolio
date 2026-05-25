@@ -26,7 +26,7 @@ const getIconForSkill = (skillName) => {
   
   // Backend & Database
   if (name.includes('node')) return <FaNodeJs className="text-[#339933]" />;
-  if (name.includes('express')) return <SiExpress className="text-gray-800" />;
+  if (name.includes('express')) return <SiExpress className="text-gray-800 dark:text-slate-200" />;
   if (name.includes('mongodb')) return <SiMongodb className="text-[#47A248]" />;
   if (name.includes('sql') || name.includes('database')) return <FaDatabase className="text-[#00758F]" />;
   if (name.includes('api')) return <FaNetworkWired className="text-[#0ea5e9]" />;
@@ -102,7 +102,7 @@ const SkillsPage = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white relative overflow-hidden pt-32 pb-24">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 relative overflow-hidden pt-32 pb-24">
       
       {/* Global Page Background Effects */}
       <motion.div 
@@ -131,7 +131,7 @@ const SkillsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight uppercase tracking-tight"
+            className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight uppercase tracking-tight"
           >
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Skills & Tech.</span>
           </motion.h1>
@@ -139,7 +139,7 @@ const SkillsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-600 max-w-2xl mx-auto font-medium"
+            className="text-xl text-gray-600 dark:text-slate-400 max-w-2xl mx-auto font-medium"
           >
             A comprehensive snapshot of the technologies, tools, and methodologies I use to build modern, scalable web applications.
           </motion.p>
@@ -161,16 +161,16 @@ const SkillsPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="break-inside-avoid group bg-white p-8 rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200 transition-all duration-300 relative overflow-hidden flex flex-col"
+                className="break-inside-avoid group bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200 transition-all duration-300 relative overflow-hidden flex flex-col"
               >
                 {/* Inner Glow on Hover */}
                 <div className="absolute -inset-[100px] bg-gradient-to-br from-blue-100/40 to-indigo-100/40 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 pointer-events-none"></div>
 
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 transition-colors">
                     {category.title}
                   </h3>
-                  <p className="text-gray-500 leading-relaxed text-sm mb-8 font-medium border-b border-gray-100 pb-6">
+                  <p className="text-gray-500 dark:text-slate-400 leading-relaxed text-sm mb-8 font-medium border-b border-gray-100 dark:border-slate-800 pb-6">
                     {category.desc}
                   </p>
                   
@@ -181,7 +181,7 @@ const SkillsPage = () => {
                         <div className="text-5xl filter drop-shadow-sm group-hover/icon:drop-shadow-[0_0_12px_rgba(37,99,235,0.4)] group-hover/icon:scale-110 group-hover/icon:-translate-y-2 transition-all duration-300">
                           {getIconForSkill(skill)}
                         </div>
-                        <span className="text-[11px] font-bold text-gray-700 uppercase tracking-widest group-hover/icon:text-blue-600 transition-colors leading-tight">
+                        <span className="text-[11px] font-bold text-gray-700 dark:text-slate-300 uppercase tracking-widest group-hover/icon:text-blue-600 transition-colors leading-tight">
                           {skill}
                         </span>
                       </div>
