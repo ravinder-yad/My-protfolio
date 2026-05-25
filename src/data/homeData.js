@@ -27,9 +27,9 @@ export const homeData = {
         }
     },
     socialLinks: {
-        github: "https://github.com",
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com",
+        github: "https://github.com/ravinder-yad",
+        linkedin: "https://www.linkedin.com/in/ravindra-fullstack",
+        instagram: "https://www.instagram.com/ravinder_khoshya/",
         email: "mailto:hello@ravinderkumar.com"
     },
     image: {

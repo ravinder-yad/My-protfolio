@@ -46,9 +46,9 @@ const Navbar = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com' },
-    { icon: <FaLinkedinIn />, url: 'https://linkedin.com' },
-    { icon: <FaInstagram />, url: 'https://instagram.com' },
+    { icon: <FaGithub />, url: 'https://github.com/ravinder-yad' },
+    { icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/in/ravindra-fullstack' },
+    { icon: <FaInstagram />, url: 'https://www.instagram.com/ravinder_khoshya/' },
     { icon: <FaEnvelope />, url: 'mailto:hello@ravinderkumar.com' },
   ];
 

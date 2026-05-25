@@ -57,9 +57,11 @@ export const portfolioData = {
   ],
 
   socialLinks: {
-    github: "https://github.com/",
-    linkedin: "https://linkedin.com/",
-    portfolio: "https://yourportfolio.com"
+    github: "https://github.com/ravinder-yad",
+    linkedin: "https://www.linkedin.com/in/ravindra-fullstack",
+    twitter: "https://twitter.com/",
+    website: "https://ravinderkumar.com",
+    instagram: "https://www.instagram.com/ravinder_khoshya/"
   }
 };
 
