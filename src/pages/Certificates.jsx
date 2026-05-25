@@ -1,6 +1,21 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaTimes } from 'react-icons/fa';
 
 const Certificates = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedImage]);
+
   const certificatesData = [
     {
       id: 1,
@@ -65,10 +80,15 @@ const Certificates = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
               key={cert.id}
-              className="group bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col"
+              onClick={() => setSelectedImage(cert.image)}
+              className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col"
             >
               <div className="relative overflow-hidden bg-gray-50 aspect-[4/3] flex items-center justify-center p-4">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+                  <span className="text-white font-bold text-lg tracking-widest bg-black/30 px-6 py-2 rounded-full backdrop-blur-sm border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    Click to View
+                  </span>
+                </div>
                 <img 
                   src={cert.image} 
                   alt={cert.title} 
@@ -87,6 +107,46 @@ const Certificates = () => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox / Modal via Portal */}
+      {createPortal(
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImage(null)}
+              className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-10 cursor-zoom-out"
+            >
+              {/* Close Button */}
+              <button 
+                onClick={(e) => { e.stopPropagation(); setSelectedImage(null); }}
+                className="absolute top-6 right-6 md:top-10 md:right-10 w-12 h-12 bg-white/20 hover:bg-red-500 text-white rounded-full flex items-center justify-center transition-colors border border-white/30 z-[10000] shadow-lg"
+              >
+                <FaTimes className="text-xl" />
+              </button>
+
+              {/* Image Container */}
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                className="relative max-w-6xl w-full h-full max-h-[90vh] flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img 
+                  src={selectedImage} 
+                  alt="Certificate Full View" 
+                  className="max-w-full max-h-full object-contain rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10"
+                />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </div>
   );
 };
