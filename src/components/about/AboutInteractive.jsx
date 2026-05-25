@@ -228,7 +228,7 @@ const AboutInteractive = () => {
 
 // Helper component for small icon tags
 const IconTag = ({ icon, name }) => (
-  <div className="flex items-center space-x-2 bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-800 px-4 py-2 rounded-xl text-textMain dark:text-white font-bold shadow-sm hover:border-blue-200 hover:text-primary hover:-translate-y-1 transition-all">
+  <div className="flex items-center space-x-2 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-800 px-4 py-2 rounded-xl text-textMain dark:text-white font-bold shadow-sm hover:border-blue-200 hover:text-primary hover:-translate-y-1 transition-all">
     <span className="text-xl">{icon}</span>
     <span className="text-sm">{name}</span>
   </div>

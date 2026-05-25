@@ -30,7 +30,7 @@ const HomeCertificates = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50 dark:bg-slate-800/50 relative overflow-hidden">
+    <section className="py-24 bg-gray-50 dark:bg-slate-800 relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1400px]">
         
         {/* Header with Top-Right Button */}
@@ -59,7 +59,7 @@ const HomeCertificates = () => {
               className="group relative bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-slate-800 hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200 transition-all duration-300"
             >
               {/* Image Container */}
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-50 dark:bg-slate-800/50 relative border border-gray-100 dark:border-slate-800 mb-6">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-50 dark:bg-slate-800 relative border border-gray-100 dark:border-slate-800 mb-6">
                 <img 
                   src={cert.image} 
                   alt={cert.title} 

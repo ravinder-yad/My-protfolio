@@ -83,7 +83,7 @@ const Certificates = () => {
               onClick={() => setSelectedImage(cert.image)}
               className="group cursor-pointer bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-slate-800 hover:shadow-2xl transition-all duration-500 flex flex-col"
             >
-              <div className="relative overflow-hidden bg-gray-50 dark:bg-slate-800/50 aspect-[4/3] flex items-center justify-center p-4">
+              <div className="relative overflow-hidden bg-gray-50 dark:bg-slate-800 aspect-[4/3] flex items-center justify-center p-4">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
                   <span className="text-white font-bold text-lg tracking-widest bg-black/30 px-6 py-2 rounded-full backdrop-blur-sm border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     Click to View

@@ -17,7 +17,7 @@ const EducationCards = () => {
   ];
 
   return (
-    <section className="py-24 relative z-10 bg-gray-50 dark:bg-slate-800/50">
+    <section className="py-24 relative z-10 bg-gray-50 dark:bg-slate-800">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
           <motion.h2 

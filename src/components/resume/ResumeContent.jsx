@@ -29,7 +29,7 @@ const ResumeContent = () => {
                 <h3 className="text-2xl font-bold text-textMain dark:text-white group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <span className="px-3 py-1 bg-gray-50 dark:bg-slate-800/50 text-textGray dark:text-slate-400 text-xs font-bold uppercase tracking-wider rounded-lg border border-gray-200 dark:border-slate-700">
+                <span className="px-3 py-1 bg-gray-50 dark:bg-slate-800 text-textGray dark:text-slate-400 text-xs font-bold uppercase tracking-wider rounded-lg border border-gray-200 dark:border-slate-700">
                   {project.duration}
                 </span>
               </div>
@@ -133,7 +133,7 @@ const SkillCard = ({ title, skills, color }) => {
   const colorMap = {
     blue: 'border-blue-100 bg-blue-50/20 text-primary',
     indigo: 'border-indigo-100 bg-indigo-50/20 text-indigo-500',
-    gray: 'border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800/50/50 text-gray-700 dark:text-slate-300'
+    gray: 'border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-slate-300'
   };
 
   return (

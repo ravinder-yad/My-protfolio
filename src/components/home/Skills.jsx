@@ -75,7 +75,7 @@ const Skills = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="bg-gray-50 dark:bg-slate-800/50/50 p-8 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-sm"
+              className="bg-gray-50 dark:bg-slate-800 p-8 rounded-[2rem] border border-gray-100 dark:border-slate-800 shadow-sm"
             >
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
                 <span className="w-2 h-8 bg-blue-600 rounded-full"></span>

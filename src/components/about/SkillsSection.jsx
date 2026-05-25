@@ -62,7 +62,7 @@ const SkillCard = ({ title, description, icons }) => {
               whileHover={{ scale: 1.15, rotate: 5 }}
               className="flex flex-col items-center justify-center space-y-2 cursor-pointer"
             >
-              <div className="w-14 h-14 bg-gray-50 dark:bg-slate-800/50 rounded-2xl flex items-center justify-center text-3xl shadow-sm border border-gray-100 dark:border-slate-800 group-hover:shadow-md transition-shadow group-hover:border-blue-100">
+              <div className="w-14 h-14 bg-gray-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-3xl shadow-sm border border-gray-100 dark:border-slate-800 group-hover:shadow-md transition-shadow group-hover:border-blue-100">
                 {item.icon}
               </div>
               <span className="text-xs font-semibold text-textGray dark:text-slate-400 group-hover:text-primary transition-colors">{item.name}</span>

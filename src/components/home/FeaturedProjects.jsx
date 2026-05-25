@@ -10,7 +10,7 @@ const FeaturedProjects = () => {
   const featured = projectsData.slice(0, 3);
 
   return (
-    <section className="py-24 bg-gray-50 dark:bg-slate-800/50 relative" id="projects">
+    <section className="py-24 bg-gray-50 dark:bg-slate-800 relative" id="projects">
       <div className="container mx-auto px-6 max-w-[1400px]">
         
         {/* Header with Top-Right Button */}

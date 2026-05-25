@@ -133,7 +133,7 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <button 
               onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 dark:border-slate-700 text-textMain dark:text-white hover:bg-gray-50 dark:bg-slate-800/50 transition-all duration-500 hover:rotate-180"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 dark:border-slate-700 text-textMain dark:text-white hover:bg-gray-50 dark:bg-slate-800 transition-all duration-500 hover:rotate-180"
             >
               {theme === 'light' ? <FiMoon className="text-lg" /> : <FiSun className="text-lg text-yellow-500" />}
             </button>
@@ -211,7 +211,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="px-6 py-8 border-t border-gray-100 dark:border-slate-800 flex flex-col items-center space-y-6 bg-gray-50 dark:bg-slate-800/50/50"
+              className="px-6 py-8 border-t border-gray-100 dark:border-slate-800 flex flex-col items-center space-y-6 bg-gray-50 dark:bg-slate-800"
             >
               <div className="flex space-x-6">
                 {socialLinks.map((social, index) => (

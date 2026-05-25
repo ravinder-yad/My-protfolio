@@ -84,7 +84,7 @@ const Resume = () => {
               <h4 className="text-lg font-bold text-blue-600 mb-4">Frontend</h4>
               <div className="flex flex-wrap gap-2">
                 {skills.frontend.map((skill, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-gray-50 dark:bg-slate-800/50 text-gray-700 dark:text-slate-300 rounded-lg text-sm border border-gray-100 dark:border-slate-800">{skill}</span>
+                  <span key={i} className="px-3 py-1.5 bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-slate-300 rounded-lg text-sm border border-gray-100 dark:border-slate-800">{skill}</span>
                 ))}
               </div>
             </div>
@@ -92,7 +92,7 @@ const Resume = () => {
               <h4 className="text-lg font-bold text-blue-600 mb-4">Backend & DB</h4>
               <div className="flex flex-wrap gap-2">
                 {[...skills.backend, ...skills.database].map((skill, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-gray-50 dark:bg-slate-800/50 text-gray-700 dark:text-slate-300 rounded-lg text-sm border border-gray-100 dark:border-slate-800">{skill}</span>
+                  <span key={i} className="px-3 py-1.5 bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-slate-300 rounded-lg text-sm border border-gray-100 dark:border-slate-800">{skill}</span>
                 ))}
               </div>
             </div>
@@ -100,7 +100,7 @@ const Resume = () => {
               <h4 className="text-lg font-bold text-blue-600 mb-4">Tools</h4>
               <div className="flex flex-wrap gap-2">
                 {skills.developmentTools.map((skill, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-gray-50 dark:bg-slate-800/50 text-gray-700 dark:text-slate-300 rounded-lg text-sm border border-gray-100 dark:border-slate-800">{skill}</span>
+                  <span key={i} className="px-3 py-1.5 bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-slate-300 rounded-lg text-sm border border-gray-100 dark:border-slate-800">{skill}</span>
                 ))}
               </div>
             </div>
@@ -108,7 +108,7 @@ const Resume = () => {
               <h4 className="text-lg font-bold text-blue-600 mb-4">Soft Skills & AI</h4>
               <div className="flex flex-wrap gap-2">
                 {[...skills.softSkills, ...skills.aiTools].map((skill, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-gray-50 dark:bg-slate-800/50 text-gray-700 dark:text-slate-300 rounded-lg text-sm border border-gray-100 dark:border-slate-800">{skill}</span>
+                  <span key={i} className="px-3 py-1.5 bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-slate-300 rounded-lg text-sm border border-gray-100 dark:border-slate-800">{skill}</span>
                 ))}
               </div>
             </div>
@@ -187,7 +187,7 @@ const Resume = () => {
               <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Additional Certifications</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {certifications.filter(c => c.organization !== "Tips-G Alwar").map((cert, i) => (
-                  <div key={i} className="p-4 rounded-xl border border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-800/50">
+                  <div key={i} className="p-4 rounded-xl border border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-800">
                     <div className="font-bold text-gray-900 dark:text-white text-sm mb-1">{cert.title}</div>
                     <div className="text-xs text-blue-600 font-semibold">{cert.organization}</div>
                     <div className="text-xs text-gray-500 dark:text-slate-400 mt-1">{cert.duration}</div>

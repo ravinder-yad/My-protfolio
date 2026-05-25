@@ -39,7 +39,7 @@ const AboutPreview = () => {
   const { personalInfo } = portfolioData;
 
   return (
-    <section className="py-24 bg-gray-50 dark:bg-slate-800/50 relative overflow-hidden" id="about">
+    <section className="py-24 bg-gray-50 dark:bg-slate-800 relative overflow-hidden" id="about">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <SectionTitle title="About Me" subtitle="A brief introduction to who I am" />
         

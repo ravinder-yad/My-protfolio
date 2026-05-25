@@ -48,7 +48,7 @@ const Contact = () => {
             transition={{ delay: 0.2 }} 
             className="w-full lg:w-1/3"
           >
-            <div className="bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-800 p-10 rounded-3xl h-full flex flex-col justify-between relative overflow-hidden shadow-sm">
+            <div className="bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-800 p-10 rounded-3xl h-full flex flex-col justify-between relative overflow-hidden shadow-sm">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 z-0"></div>
               
               <div className="relative z-10">
@@ -124,7 +124,7 @@ const Contact = () => {
                     <input 
                       required
                       type="text" 
-                      className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
                       placeholder="John Doe" 
                     />
                   </div>
@@ -133,7 +133,7 @@ const Contact = () => {
                     <input 
                       required
                       type="email" 
-                      className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
                       placeholder="john@example.com" 
                     />
                   </div>
@@ -143,7 +143,7 @@ const Contact = () => {
                   <input 
                     required
                     type="text" 
-                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
                     placeholder="Freelance Project Inquiry" 
                   />
                 </div>
@@ -152,7 +152,7 @@ const Contact = () => {
                   <textarea 
                     required
                     rows="5" 
-                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400 resize-none" 
+                    className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400 resize-none" 
                     placeholder="Tell me about your project..."
                   ></textarea>
                 </div>
