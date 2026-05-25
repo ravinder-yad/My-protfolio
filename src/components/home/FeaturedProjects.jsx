@@ -1,115 +1,91 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FiArrowRight } from 'react-icons/fi';
 import SectionTitle from '../common/SectionTitle';
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { projectsData } from '../../data/resumeData';
 
 const FeaturedProjects = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Hospital Management System",
-      description: "A comprehensive digital solution for hospitals to manage patients, appointments, and staff efficiently with real-time updates.",
-      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-      github: "https://github.com",
-      live: "https://example.com"
-    },
-    {
-      id: 2,
-      title: "IndiaWalls Platform",
-      description: "A premium wallpaper and interior design platform showcasing modern aesthetics with high-performance image rendering.",
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
-      github: "https://github.com",
-      live: "https://example.com"
-    },
-    {
-      id: 3,
-      title: "Admin Dashboard Pro",
-      description: "An analytical dashboard providing deep insights into sales, user growth, and system performance through interactive charts.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Recharts", "Express", "Context API"],
-      github: "https://github.com",
-      live: "https://example.com"
-    }
-  ];
+  // Take exactly the top 3 projects to fit perfectly in a single row on desktop
+  const featured = projectsData.slice(0, 3);
 
   return (
-    <section className="py-24 bg-white relative" id="projects">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <SectionTitle title="Featured Projects" subtitle="Some of my recent premium builds" />
+    <section className="py-24 bg-gray-50 relative" id="projects">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         
-        <div className="mt-16 space-y-24">
-          {projects.map((project, index) => (
-            <motion.div 
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
+        {/* Header with Top-Right Button */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+          <SectionTitle 
+            title="Featured Projects" 
+            subtitle="Some of my best work and premium builds" 
+          />
+          
+          <Link 
+            to="/projects"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-bold border-2 border-gray-100 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow-lg hover:shadow-blue-500/20 whitespace-nowrap"
+          >
+            View All Projects <FiArrowRight />
+          </Link>
+        </div>
+        
+        {/* 3 Projects in a Single Row (Grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featured.map((project, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 group`}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              key={project.id}
+              className="group bg-white rounded-3xl overflow-hidden hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] border border-gray-100 hover:border-blue-200 transition-all duration-500"
             >
-              {/* Image Container with Hover Zoom & Glow */}
-              <div className="w-full lg:w-1/2 relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.2)] transition-shadow duration-500">
-                <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10 duration-500"></div>
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                  />
-                </div>
+              {/* Image Container */}
+              <div className="relative h-60 overflow-hidden">
+                <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" 
+                />
               </div>
 
-              {/* Project Details */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <div className="text-primary font-bold tracking-widest uppercase text-sm mb-2">Featured Project</div>
-                <h3 className="text-3xl md:text-4xl font-extrabold text-textMain mb-6 group-hover:text-primary transition-colors">{project.title}</h3>
-                
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-50 text-textGray text-lg leading-relaxed mb-6 relative z-20 md:-ml-8 lg:-ml-12 md:mr-0 group-hover:shadow-md transition-shadow">
+              {/* Content */}
+              <div className="p-8 flex flex-col h-[calc(100%-15rem)]">
+                <div className="text-blue-600 font-bold tracking-widest uppercase text-[10px] mb-3">Featured Project</div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-gray-500 font-medium leading-relaxed mb-6 line-clamp-2">
                   {project.description}
+                </p>
+                
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-8 flex-grow">
+                  {project.techStack.map(tech => (
+                    <span key={tech} className="px-3 py-1 bg-blue-50/50 border border-blue-100 text-blue-600 text-[10px] font-bold uppercase tracking-wider rounded-lg">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
                 
-                <ul className="flex flex-wrap gap-3 mb-8 text-sm font-mono text-textGray">
-                  {project.tags.map((tag, i) => (
-                    <li key={i} className="px-3 py-1 bg-gray-100 rounded-md">{tag}</li>
-                  ))}
-                </ul>
-                
-                <div className="flex items-center space-x-6">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="flex items-center space-x-2 text-textMain hover:text-primary transition-colors font-bold"
-                  >
-                    <FiGithub className="text-xl" />
-                    <span>Code</span>
-                  </a>
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="flex items-center space-x-2 text-textMain hover:text-primary transition-colors font-bold"
-                  >
-                    <FiExternalLink className="text-xl" />
-                    <span>Live Demo</span>
-                  </a>
+                {/* Links */}
+                <div className="flex justify-between items-center border-t border-gray-100 pt-5 mt-auto">
+                  {project.link && project.link !== "#" && (
+                    <a href={project.link} target="_blank" rel="noreferrer" className="flex items-center text-gray-900 hover:text-blue-600 transition-colors font-bold text-sm">
+                      <FaExternalLinkAlt className="mr-2" /> Live Demo
+                    </a>
+                  )}
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center text-gray-900 hover:text-blue-600 transition-colors font-bold text-sm">
+                      <FaGithub className="mr-2 text-lg" /> Code
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
         
-        <div className="mt-20 text-center">
-          <motion.a 
-            href="/projects"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-8 py-4 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary hover:text-white shadow-[0_10px_20px_rgba(37,99,235,0.1)] transition-all"
-          >
-            View All Projects
-          </motion.a>
-        </div>
       </div>
     </section>
   );

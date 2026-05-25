@@ -6,8 +6,7 @@ import HomeServices from '../components/home/HomeServices';
 import FeaturedProjects from '../components/home/FeaturedProjects';
 import ExperienceTimeline from '../components/home/ExperienceTimeline';
 import HomeCertificates from '../components/home/HomeCertificates';
-import Testimonials from '../components/home/Testimonials';
-import ContactCTA from '../components/home/ContactCTA';
+import HomeContact from '../components/home/HomeContact';
 
 const Home = () => {
   return (
@@ -20,8 +19,7 @@ const Home = () => {
       <FeaturedProjects />
       <ExperienceTimeline />
       <HomeCertificates />
-      <Testimonials />
-      <ContactCTA />
+      <HomeContact />
     </div>
   );
 };

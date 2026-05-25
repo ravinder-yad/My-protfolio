@@ -1,46 +1,61 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 import SectionTitle from '../common/SectionTitle';
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaFigma } from 'react-icons/fa';
-import { SiJavascript, SiTailwindcss, SiExpress, SiMongodb, SiGit } from 'react-icons/si';
+import { portfolioData } from '../../data/resumeData';
+
+// Icons Import
+import { 
+  FaHtml5, FaCss3Alt, FaBootstrap, FaReact, FaNodeJs, FaDatabase, FaNetworkWired, FaLock, FaGitAlt, FaGithub, FaMobileAlt, FaPaintBrush
+} from 'react-icons/fa';
+import { 
+  SiTailwindcss, SiJavascript, SiExpress, SiMongodb, SiPostman, SiVercel, SiCanva 
+} from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 
+const getIconForSkill = (skillName) => {
+  const name = skillName.toLowerCase();
+  
+  // Frontend & Languages
+  if (name.includes('javascript')) return <SiJavascript className="text-[#F7DF1E]" />;
+  if (name.includes('html')) return <FaHtml5 className="text-[#E34F26]" />;
+  if (name.includes('css')) return <FaCss3Alt className="text-[#1572B6]" />;
+  if (name.includes('bootstrap')) return <FaBootstrap className="text-[#7952B3]" />;
+  if (name.includes('tailwind')) return <SiTailwindcss className="text-[#06B6D4]" />;
+  if (name.includes('react')) return <FaReact className="text-[#61DAFB]" />;
+  if (name.includes('responsive')) return <FaMobileAlt className="text-[#3b82f6]" />;
+  if (name.includes('ui') || name.includes('ux') || name.includes('design')) return <FaPaintBrush className="text-[#ec4899]" />;
+  
+  // Backend & Database
+  if (name.includes('node')) return <FaNodeJs className="text-[#339933]" />;
+  if (name.includes('express')) return <SiExpress className="text-gray-800" />;
+  if (name.includes('mongodb')) return <SiMongodb className="text-[#47A248]" />;
+  if (name.includes('sql') || name.includes('database')) return <FaDatabase className="text-[#00758F]" />;
+  if (name.includes('api')) return <FaNetworkWired className="text-[#0ea5e9]" />;
+  if (name.includes('jwt') || name.includes('auth')) return <FaLock className="text-[#eab308]" />;
+  
+  // Tools
+  if (name === 'git') return <FaGitAlt className="text-[#F05032]" />;
+  if (name.includes('github')) return <FaGithub className="text-[#181717]" />;
+  if (name.includes('postman')) return <SiPostman className="text-[#FF6C37]" />;
+  if (name.includes('vscode') || name.includes('visual studio')) return <VscVscode className="text-[#007ACC]" />;
+  if (name.includes('vercel')) return <SiVercel className="text-black" />;
+  if (name.includes('canva')) return <SiCanva className="text-[#00C4CC]" />;
+  
+  return <FaReact className="text-blue-500" />;
+};
+
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      skills: [
-        { name: 'HTML5', icon: <FaHtml5 className="text-[#E34F26]" /> },
-        { name: 'CSS3', icon: <FaCss3Alt className="text-[#1572B6]" /> },
-        { name: 'JavaScript', icon: <SiJavascript className="text-[#F7DF1E]" /> },
-        { name: 'React.js', icon: <FaReact className="text-[#61DAFB]" /> },
-        { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-      ]
-    },
-    {
-      title: "Backend Development",
-      skills: [
-        { name: 'Node.js', icon: <FaNodeJs className="text-[#339933]" /> },
-        { name: 'Express.js', icon: <SiExpress className="text-[#000000]" /> },
-        { name: 'MongoDB', icon: <SiMongodb className="text-[#47A248]" /> },
-      ]
-    },
-    {
-      title: "Tools & Platforms",
-      skills: [
-        { name: 'Git', icon: <SiGit className="text-[#F05032]" /> },
-        { name: 'GitHub', icon: <FaGithub className="text-[#181717]" /> },
-        { name: 'VS Code', icon: <VscVscode className="text-[#007ACC]" /> },
-        { name: 'Figma', icon: <FaFigma className="text-[#F24E1E]" /> },
-      ]
-    }
+  // We only show the top 3 categories on the homepage so it's a preview
+  const previewCategories = [
+    { title: "Frontend Development", data: portfolioData.skills.frontend },
+    { title: "Backend Development", data: portfolioData.skills.backend },
+    { title: "Tools & Platforms", data: portfolioData.skills.developmentTools }
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
   };
 
   const itemVariants = {
@@ -50,43 +65,57 @@ const Skills = () => {
 
   return (
     <section className="py-24 bg-white relative" id="skills">
-      <div className="container mx-auto px-6 max-w-6xl">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         <SectionTitle title="Technical Skills" subtitle="The building blocks of my web experiences" />
         
-        <div className="mt-16 space-y-16">
-          {skillCategories.map((category, idx) => (
-            <div key={idx}>
-              <h3 className="text-2xl font-bold text-textMain mb-8 pl-4 border-l-4 border-primary">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {previewCategories.map((category, idx) => (
+            <motion.div 
+              key={idx}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="bg-gray-50/50 p-8 rounded-[2rem] border border-gray-100 shadow-sm"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+                <span className="w-2 h-8 bg-blue-600 rounded-full"></span>
                 {category.title}
               </h3>
               
               <motion.div 
                 variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6"
+                className="grid grid-cols-2 gap-4"
               >
-                {category.skills.map((skill, i) => (
+                {category.data.map((skill, i) => (
                   <motion.div
                     key={i}
                     variants={itemVariants}
-                    whileHover={{ y: -8, scale: 1.05 }}
-                    className="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:border-blue-200 hover:shadow-[0_10px_30px_rgba(37,99,235,0.1)] transition-all duration-300 relative overflow-hidden"
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    className="group flex items-center gap-3 p-4 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 hover:border-blue-200 hover:shadow-[0_10px_30px_rgba(37,99,235,0.08)] transition-all duration-300 cursor-pointer"
                   >
-                    {/* Background Glow on Hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    <div className="text-5xl mb-4 group-hover:rotate-12 transition-transform duration-300 relative z-10">
-                      {skill.icon}
+                    <div className="text-3xl group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
+                      {getIconForSkill(skill)}
                     </div>
-                    <span className="font-semibold text-textMain relative z-10">{skill.name}</span>
+                    <span className="font-bold text-xs uppercase tracking-wide text-gray-700 group-hover:text-blue-600 transition-colors">
+                      {skill}
+                    </span>
                   </motion.div>
                 ))}
               </motion.div>
-            </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* View All Skills Button */}
+        <div className="mt-16 text-center">
+          <Link 
+            to="/skills"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 font-bold border-2 border-gray-100 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow-lg hover:shadow-blue-500/20"
+          >
+            Explore All My Skills <FiArrowRight />
+          </Link>
+        </div>
+
       </div>
     </section>
   );

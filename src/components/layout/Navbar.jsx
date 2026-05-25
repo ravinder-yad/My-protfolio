@@ -34,7 +34,7 @@ const Navbar = () => {
     { icon: <FaGithub />, url: 'https://github.com' },
     { icon: <FaLinkedinIn />, url: 'https://linkedin.com' },
     { icon: <FaInstagram />, url: 'https://instagram.com' },
-    { icon: <FaEnvelope />, url: 'mailto:hello@ravindra.com' },
+    { icon: <FaEnvelope />, url: 'mailto:hello@ravinderkumar.com' },
   ];
 
   const toggleTheme = () => {
@@ -212,7 +212,7 @@ const Navbar = () => {
                 ))}
               </div>
               <a 
-                href="/resume/Ravindra_Resume.pdf" 
+                href="/resume/Ravinder_Kumar_Resume.pdf" 
                 target="_blank" 
                 rel="noreferrer"
                 className="w-full text-center py-4 bg-textMain text-white font-bold tracking-widest uppercase rounded-2xl shadow-xl hover:bg-primary transition-colors"

@@ -39,7 +39,7 @@ const AboutInteractive = () => {
               className="space-y-6 text-lg text-textGray leading-relaxed"
             >
               <p>
-                I'm <strong className="text-textMain border-b-2 border-primary pb-0.5">Ravindra Yadav</strong>, a passionate Full Stack Web Developer who enjoys building clean, scalable, and user-focused web applications that solve real-world problems.
+                I'm <strong className="text-textMain border-b-2 border-primary pb-0.5">Ravinder Kumar</strong>, a passionate Full Stack Web Developer who enjoys building clean, scalable, and user-focused web applications that solve real-world problems.
               </p>
               <p>
                 I focus on bridging intuitive frontend experiences with robust backend systems to deliver reliable, high-performing, and user-friendly digital products.

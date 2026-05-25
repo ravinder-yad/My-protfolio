@@ -1,59 +1,93 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 import SectionTitle from '../common/SectionTitle';
 
 const HomeCertificates = () => {
+  // Using the real certificate images from the public folder
   const certificates = [
     {
-      title: "Full Stack Development",
-      issuer: "Udemy",
-      date: "Aug 2023",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      id: 1,
+      title: "Google Analytics Certification",
+      issuer: "Google",
+      date: "2024",
+      image: "/certificates/media__1779635393780.jpg"
     },
     {
-      title: "React Native Mastery",
-      issuer: "Coursera",
-      date: "Dec 2023",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      id: 2,
+      title: "Postman API Fundamentals",
+      issuer: "Postman",
+      date: "2024",
+      image: "/certificates/media__1779635411707.jpg"
+    },
+    {
+      id: 3,
+      title: "HackerRank CSS Certification",
+      issuer: "HackerRank",
+      date: "2025",
+      image: "/certificates/media__1779635424391.jpg"
     }
   ];
 
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <SectionTitle title="Certificates" subtitle="My achievements and continuous learning" />
+    <section className="py-24 bg-gray-50 relative overflow-hidden">
+      <div className="container mx-auto px-6 max-w-[1400px]">
+        
+        {/* Header with Top-Right Button */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+          <SectionTitle 
+            title="Certifications" 
+            subtitle="My professional achievements and verified skills" 
+          />
+          
+          <Link 
+            to="/certificates"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-bold border-2 border-gray-100 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all shadow-sm hover:shadow-lg hover:shadow-blue-500/20 whitespace-nowrap"
+          >
+            View All Certificates <FiArrowRight />
+          </Link>
+        </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificates.map((cert, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="group relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 cursor-pointer"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(37,99,235,0.12)] hover:border-blue-200 transition-all duration-300"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
+              {/* Image Container */}
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-50 relative border border-gray-100 mb-6">
                 <img 
                   src={cert.image} 
                   alt={cert.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                  className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-blue-300 font-bold text-sm tracking-wider uppercase mb-2 block">{cert.issuer} • {cert.date}</span>
-                  <h3 className="text-2xl font-bold text-white">{cert.title}</h3>
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              
+              {/* Content */}
+              <div className="px-2">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-blue-600 font-bold text-xs tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">
+                    {cert.issuer}
+                  </span>
+                  <span className="text-gray-400 text-sm font-medium">
+                    {cert.date}
+                  </span>
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  {cert.title}
+                </h3>
               </div>
             </motion.div>
           ))}
         </div>
         
-        <div className="mt-12 text-center">
-          <a href="/certificates" className="inline-block text-primary font-bold hover:underline underline-offset-4 transition-all">
-            View All Certificates →
-          </a>
-        </div>
       </div>
     </section>
   );

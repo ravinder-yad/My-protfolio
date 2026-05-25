@@ -1,6 +1,9 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 import SectionTitle from '../common/SectionTitle';
+import { portfolioData, projectsData } from '../../data/resumeData';
 
 const Counter = ({ from, to, duration, suffix = '' }) => {
   const [count, setCount] = useState(from);
@@ -33,12 +36,14 @@ const Counter = ({ from, to, duration, suffix = '' }) => {
 };
 
 const AboutPreview = () => {
+  const { personalInfo } = portfolioData;
+
   return (
     <section className="py-24 bg-gray-50 relative overflow-hidden" id="about">
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <SectionTitle title="About Me" subtitle="A brief introduction to who I am" />
         
-        <div className="flex flex-col lg:flex-row gap-12 mt-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-16 mt-16 items-center">
           
           {/* Left: Image Card */}
           <motion.div 
@@ -48,13 +53,12 @@ const AboutPreview = () => {
             transition={{ duration: 0.6 }}
             className="w-full lg:w-5/12 relative"
           >
-            <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl group">
-              <div className="absolute inset-0 bg-blue-600/20 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-overlay"></div>
+            <div className="relative w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group border-[8px] border-white">
+              <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
               {/* Fallback pattern if no image */}
               <div className="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-50 flex items-center justify-center">
-                 <div className="text-center text-blue-300 font-bold text-2xl px-6">
-                   [ Place Your Image Here ]<br/>
-                   <span className="text-sm">public/about-image.jpg</span>
+                 <div className="text-center text-blue-400 font-bold text-2xl px-6 opacity-50">
+                   &lt; Image Here /&gt;
                  </div>
               </div>
             </div>
@@ -63,12 +67,12 @@ const AboutPreview = () => {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 z-20"
+              className="absolute -bottom-6 -right-6 md:bottom-10 md:-right-10 bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100 z-20"
             >
-              <div className="text-4xl font-extrabold text-primary mb-1">
-                <Counter from={0} to={2} duration={2000} suffix="+" />
+              <div className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2 leading-none">
+                <Counter from={0} to={1} duration={2000} suffix="+" />
               </div>
-              <div className="text-sm text-textGray font-bold uppercase tracking-wider">Years<br/>Learning</div>
+              <div className="text-xs text-gray-500 font-bold uppercase tracking-widest leading-tight">Year of<br/>Experience</div>
             </motion.div>
           </motion.div>
 
@@ -81,32 +85,45 @@ const AboutPreview = () => {
             className="w-full lg:w-7/12 flex flex-col gap-8"
           >
             <div>
-              <h3 className="text-3xl font-bold text-textMain mb-4">I build experiences, not just websites.</h3>
-              <p className="text-lg text-textGray leading-relaxed mb-6">
-                I am a passionate Full Stack Developer with a strong focus on creating beautiful, responsive, and highly interactive user interfaces. I believe that a great website should feel like a living product rather than a static document.
-              </p>
-              <p className="text-lg text-textGray leading-relaxed">
-                My journey in tech involves continuous learning and applying modern technologies like React and Tailwind to craft seamless digital experiences.
-              </p>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Hi, I'm {personalInfo.name}.<br/>
+                <span className="text-blue-600">{personalInfo.title}</span>
+              </h3>
+              
+              <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm relative overflow-hidden mb-6">
+                <div className="absolute top-0 left-0 w-2 h-full bg-blue-600"></div>
+                <p className="text-lg text-gray-600 font-medium leading-relaxed">
+                  {personalInfo.summary}
+                </p>
+              </div>
             </div>
 
             {/* Bento Grid Stats */}
-            <div className="grid grid-cols-2 gap-4 mt-4">
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all group">
                 <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2">
-                  <Counter from={0} to={10} duration={2000} suffix="+" />
+                  <Counter from={0} to={projectsData.length} duration={2000} suffix="+" />
                 </div>
-                <div className="text-textMain font-bold">Projects Built</div>
-                <div className="text-sm text-textGray mt-1">From landing pages to full-stack apps</div>
+                <div className="text-gray-900 font-bold text-lg">Projects Built</div>
+                <div className="text-sm text-gray-500 font-medium mt-1">Full-stack & UI clones</div>
               </div>
               
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+              <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all group">
                 <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-2">
                   <Counter from={0} to={100} duration={2500} suffix="%" />
                 </div>
-                <div className="text-textMain font-bold">Responsive UI</div>
-                <div className="text-sm text-textGray mt-1">Pixel perfect on every device</div>
+                <div className="text-gray-900 font-bold text-lg">Responsive UI</div>
+                <div className="text-sm text-gray-500 font-medium mt-1">Pixel perfect on any device</div>
               </div>
+            </div>
+
+            <div className="mt-4">
+              <Link 
+                to="/about"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white font-bold rounded-full hover:bg-blue-600 transition-colors shadow-lg hover:shadow-blue-500/30"
+              >
+                More About Me <FiArrowRight />
+              </Link>
             </div>
 
           </motion.div>

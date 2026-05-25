@@ -1,7 +1,7 @@
 export const homeData = {
     hero: {
         greeting: "HELLO I'M",
-        name: "Ravindra Yadav",
+        name: "Ravinder Kumar",
         subtitlePrefix: "A Passionate",
         roles: [
             "Full Stack Developer",
@@ -30,11 +30,11 @@ export const homeData = {
         github: "https://github.com",
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
-        email: "mailto:hello@ravindra.com"
+        email: "mailto:hello@ravinderkumar.com"
     },
     image: {
-        src: "/images/ravindra.png", // Will need an actual image or fallback
-        alt: "Ravindra Yadav - Full Stack Developer"
+        src: "/images/ravinder.png", // Will need an actual image or fallback
+        alt: "Ravinder Kumar - Full Stack Developer"
     },
     techStack: [
         "React",
