@@ -195,10 +195,20 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-56 h-56 md:w-80 md:h-80 rounded-full bg-white dark:bg-slate-900 shadow-[0_20px_50px_rgba(37,99,235,0.1)] border-4 border-white overflow-hidden flex justify-center items-end"
+              className="relative w-56 h-56 md:w-80 md:h-80 rounded-full bg-gradient-to-b from-blue-50 to-blue-100 dark:from-slate-800 dark:to-slate-900 shadow-[0_20px_50px_rgba(37,99,235,0.1)] border-4 border-white dark:border-slate-800 overflow-hidden flex justify-center items-end"
             >
+              <img 
+                src="/images/profile.png" 
+                alt="Ravinder Kumar" 
+                className="w-full h-full object-cover" 
+                onError={(e) => {
+                  e.target.onerror = null; 
+                  e.target.style.display = 'none';
+                  document.getElementById('fallback-avatar').style.display = 'flex';
+                }}
+              />
               {/* Fallback avatar if no image */}
-              <div className="w-full h-full bg-gradient-to-b from-blue-50 to-blue-100 flex items-center justify-center">
+              <div id="fallback-avatar" className="absolute inset-0 w-full h-full bg-gradient-to-b from-blue-50 to-blue-100 hidden items-center justify-center">
                 <span className="text-4xl text-blue-300 font-bold">RY</span>
               </div>
             </motion.div>
