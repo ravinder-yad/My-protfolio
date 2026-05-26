@@ -11,19 +11,19 @@ const HomeCertificates = () => {
       title: "Google Analytics Certification",
       issuer: "Google",
       date: "2024",
-      image: "/certificates/media__1779635393780.jpg"
+      image: "/certificates/media__1779635393781.jpg"
     },
     {
       id: 2,
-      title: "Postman API Fundamentals",
-      issuer: "Postman",
-      date: "2024",
-      image: "/certificates/media__1779635411707.jpg"
+      title: "Software Engineer Certification",
+      issuer: "HackerRank",
+      date: "2025",
+      image: "/certificates/media__1779635419081.jpg"
     },
     {
       id: 3,
-      title: "HackerRank CSS Certification",
-      issuer: "HackerRank",
+      title: "Git/Github Completion",
+      issuer: "CodeChef",
       date: "2025",
       image: "/certificates/media__1779635424391.jpg"
     }
