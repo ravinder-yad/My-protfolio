@@ -13,10 +13,10 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-slate-700/50 shadow-sm;
   }
   .glass-card {
-    @apply bg-white/80 backdrop-blur-lg border border-borderGray shadow-sm hover:shadow-md transition-shadow duration-300;
+    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border border-borderGray dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-300;
   }
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
