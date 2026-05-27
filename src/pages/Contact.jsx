@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPhoneAlt, FaPaperPlane } from 'react-icons/fa';
 import { portfolioData } from '../data/resumeData';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const { personalInfo, socialLinks } = portfolioData;
@@ -11,13 +12,24 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
-      e.target.reset();
-    }, 1500);
+
+    const SERVICE_ID = 'service_soee8ab';
+    const TEMPLATE_ID = 'template_default'; // Fallback to default template, can be modified
+    const PUBLIC_KEY = 'XND3I2oHN7GiXAlP4';
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+      .then((result) => {
+        console.log('SUCCESS!', result.status, result.text);
+        setIsSubmitting(false);
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 5000);
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error('FAILED...', error);
+        setIsSubmitting(false);
+        alert('Failed to send message. Please try again.');
+      });
   };
 
   return (
@@ -124,6 +136,7 @@ const Contact = () => {
                     <input 
                       required
                       type="text" 
+                      name="from_name"
                       className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
                       placeholder="John Doe" 
                     />
@@ -133,6 +146,7 @@ const Contact = () => {
                     <input 
                       required
                       type="email" 
+                      name="from_email"
                       className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
                       placeholder="john@example.com" 
                     />
@@ -143,6 +157,7 @@ const Contact = () => {
                   <input 
                     required
                     type="text" 
+                    name="subject"
                     className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400" 
                     placeholder="Freelance Project Inquiry" 
                   />
@@ -152,6 +167,7 @@ const Contact = () => {
                   <textarea 
                     required
                     rows="5" 
+                    name="message"
                     className="w-full px-5 py-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all font-medium text-gray-900 dark:text-white placeholder-gray-400 resize-none" 
                     placeholder="Tell me about your project..."
                   ></textarea>
