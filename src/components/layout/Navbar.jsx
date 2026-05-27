@@ -77,10 +77,10 @@ const Navbar = () => {
         <div className="container mx-auto px-6 lg:px-10 h-full flex justify-between items-center relative">
           
           {/* Logo */}
-          <Link to="/" className="group relative flex items-center h-full">
-            <span className="text-2xl md:text-3xl font-extrabold tracking-tighter text-textMain dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300 transform group-hover:rotate-3">
-              &lt;RY /&gt;
-            </span>
+          <Link to="/" className="flex items-center text-2xl md:text-3xl font-black tracking-tighter group transition-transform duration-300 hover:scale-[1.03]">
+            <span className="text-blue-600 dark:text-blue-400 transform group-hover:-translate-x-1.5 transition-transform duration-300">&lt;</span>
+            <span className="text-slate-900 dark:text-white mx-0.5 font-extrabold tracking-normal">RY</span>
+            <span className="text-indigo-600 dark:text-indigo-400 transform group-hover:translate-x-1.5 transition-transform duration-300">/&gt;</span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -171,9 +171,11 @@ const Navbar = () => {
           >
             {/* Mobile Header */}
             <div className="h-[70px] flex items-center justify-between px-6 border-b border-gray-100 dark:border-slate-800">
-              <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                &lt;RY /&gt;
-              </span>
+              <div className="flex items-center text-2xl font-black tracking-tighter">
+                <span className="text-blue-600 dark:text-blue-400">&lt;</span>
+                <span className="text-slate-900 dark:text-white mx-0.5 font-extrabold tracking-normal">RY</span>
+                <span className="text-indigo-600 dark:text-indigo-400">/&gt;</span>
+              </div>
               <button 
                 onClick={() => setIsOpen(false)} 
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-slate-800 text-textMain dark:text-white text-2xl hover:bg-red-50 hover:text-red-500 transition-colors"

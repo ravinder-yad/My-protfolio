@@ -53,14 +53,13 @@ const AboutPreview = () => {
             transition={{ duration: 0.6 }}
             className="w-full lg:w-5/12 relative"
           >
-            <div className="relative w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group border-[8px] border-white">
-              <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-              {/* Fallback pattern if no image */}
-              <div className="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-50 flex items-center justify-center">
-                 <div className="text-center text-blue-400 font-bold text-2xl px-6 opacity-50">
-                   &lt; Image Here /&gt;
-                 </div>
-              </div>
+            <div className="relative w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group border-[8px] border-white dark:border-slate-800 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
+              <div className="absolute inset-0 bg-blue-600/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              <img 
+                src="/images/profile.png" 
+                alt="Ravinder Kumar" 
+                className="w-full h-full object-cover object-top p-4 transform group-hover:scale-105 transition-transform duration-700" 
+              />
             </div>
             
             {/* Floating Experience Badge */}

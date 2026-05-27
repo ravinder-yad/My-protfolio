@@ -8,24 +8,24 @@ const HomeCertificates = () => {
   const certificates = [
     {
       id: 1,
-      title: "Google Analytics Certification",
-      issuer: "Google",
-      date: "2024",
-      image: "/certificates/media__1779635393781.jpg"
+      title: "NodeJs + ExpressJs + MongoDB",
+      issuer: "KnowledgeGate",
+      date: "2026",
+      image: "/certificates/media__1779881150953.jpg"
     },
     {
       id: 2,
-      title: "Software Engineer Certification",
-      issuer: "HackerRank",
-      date: "2025",
-      image: "/certificates/media__1779635419081.jpg"
+      title: "React and Redux",
+      issuer: "KnowledgeGate",
+      date: "2026",
+      image: "/certificates/media__1779881150866.jpg"
     },
     {
       id: 3,
-      title: "Git/Github Completion",
-      issuer: "CodeChef",
-      date: "2025",
-      image: "/certificates/media__1779635424391.jpg"
+      title: "Complete JAVASCRIPT",
+      issuer: "KnowledgeGate",
+      date: "2026",
+      image: "/certificates/media__1779881150883.jpg"
     }
   ];
 

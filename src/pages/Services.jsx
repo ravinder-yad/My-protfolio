@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FiMonitor, FiServer, FiCode, FiSmartphone, FiArrowRight } from 'react-icons/fi';
+import { FiMonitor, FiCode, FiSmartphone, FiLayout, FiPenTool, FiDatabase, FiArrowRight } from 'react-icons/fi';
 
 const Services = () => {
   const { scrollY } = useScroll();
@@ -10,28 +10,38 @@ const Services = () => {
   const servicesData = [
     {
       title: "Frontend Development",
-      description: "Building modern, responsive, and user-friendly interfaces using HTML, CSS, JavaScript, and React with a strong focus on UX.",
+      description: "Building responsive, performant, and interactive user interfaces using modern frameworks like React.",
       icon: <FiMonitor />
     },
     {
       title: "Backend Development",
-      description: "Developing secure and scalable backend systems using Node.js, Express, and MongoDB, creating reliable APIs.",
-      icon: <FiServer />
-    },
-    {
-      title: "Full Stack Web Dev",
-      description: "Building complete web applications by managing and integrating both frontend and backend development smoothly.",
+      description: "End-to-end web applications with robust backend systems using Node.js and MongoDB.",
       icon: <FiCode />
     },
     {
-      title: "Responsive Web Design",
-      description: "Designing and optimizing websites to look beautiful and work seamlessly across mobile, tablet, and desktop devices.",
+      title: "Responsive Design",
+      description: "Pixel-perfect designs that look and work flawlessly across all device sizes.",
       icon: <FiSmartphone />
+    },
+    {
+      title: "API Integration",
+      description: "Designing and integrating secure RESTful APIs to connect frontend with powerful server logic.",
+      icon: <FiDatabase />
+    },
+    {
+      title: "Landing Pages",
+      description: "High-converting, lightning-fast landing pages tailored for your marketing campaigns.",
+      icon: <FiLayout />
+    },
+    {
+      title: "UI/UX Enhancements",
+      description: "Upgrading existing interfaces with premium animations and modern design principles.",
+      icon: <FiPenTool />
     }
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 relative overflow-hidden pt-32 pb-20 lg:pt-0 lg:pb-0 justify-center">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 relative overflow-hidden pt-32 md:pt-40 pb-24">
       
       {/* Global Page Background Effects */}
       <motion.div 
@@ -53,7 +63,7 @@ const Services = () => {
       </motion.div>
 
       <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-start">
           
           {/* Left Column: Heading & Description */}
           <motion.div 
