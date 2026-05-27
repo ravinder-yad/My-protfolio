@@ -14,7 +14,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     const SERVICE_ID = 'service_soee8ab';
-    const TEMPLATE_ID = 'template_default'; // Fallback to default template, can be modified
+    const TEMPLATE_ID = 'template_c1ba0w8';
     const PUBLIC_KEY = 'XND3I2oHN7GiXAlP4';
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
