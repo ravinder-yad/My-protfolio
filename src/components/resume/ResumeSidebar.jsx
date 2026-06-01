@@ -56,9 +56,13 @@ const ResumeSidebar = () => {
         </div>
 
         {/* Action Button */}
-        <button className="w-full flex items-center justify-center gap-2 py-3 px-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+        <a
+          href="/resume/ravinder-resume.pdf"
+          download="Ravinder-Kumar-Resume.pdf"
+          className="w-full flex items-center justify-center gap-2 py-3 px-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+        >
           <FaDownload /> Download Resume
-        </button>
+        </a>
 
       </motion.div>
 

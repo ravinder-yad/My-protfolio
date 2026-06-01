@@ -4,22 +4,20 @@ import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaLinkedin, FaGithub, FaDownloa
 
 const Resume = () => {
   const { personalInfo, skills, certifications, achievements, socialLinks } = portfolioData;
-
-  const handlePrint = () => {
-    window.print();
-  };
+  const resumePdf = '/resume/ravinder-resume.pdf';
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 pt-28 pb-20 font-sans text-gray-800 dark:text-slate-200">
       
       {/* Top Action Bar */}
       <div className="container mx-auto px-6 mb-8 flex justify-end print:hidden">
-        <button 
-          onClick={handlePrint}
+        <a
+          href={resumePdf}
+          download="Ravinder-Kumar-Resume.pdf"
           className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-xl font-bold shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5"
         >
           <FaDownload /> Download PDF
-        </button>
+        </a>
       </div>
 
       <motion.div 

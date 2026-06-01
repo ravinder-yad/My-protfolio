@@ -228,10 +228,9 @@ const Navbar = () => {
                   </a>
                 ))}
               </div>
-              <a 
-                href="/resume/Ravinder_Kumar_Resume.pdf" 
-                target="_blank" 
-                rel="noreferrer"
+              <a
+                href="/resume/ravinder-resume.pdf"
+                download="Ravinder-Kumar-Resume.pdf"
                 className="w-full text-center py-4 bg-textMain text-white font-bold tracking-widest uppercase rounded-2xl shadow-xl hover:bg-primary transition-colors"
               >
                 Download Resume
