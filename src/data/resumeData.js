@@ -80,42 +80,6 @@ export const projectsData = [
     },
     {
         id: 2,
-        title: "Rapido App (UI Clone)",
-        description: "Frontend UI clone focusing on layout, styling, and responsiveness.",
-        techStack: ["HTML", "CSS", "JavaScript", "React"],
-        link: "https://rapido-app-ten.vercel.app/",
-        github: "#",
-        image: "https://picsum.photos/seed/rapido/800/600",
-        category: "Logistics",
-        duration: "2025",
-        features: ["Pixel Perfect UI", "Responsive Design", "Modern Styling"]
-    },
-    {
-        id: 3,
-        title: "Electricity Billing Website",
-        description: "Simple billing interface with clean design and usability.",
-        techStack: ["HTML", "CSS", "JavaScript"],
-        link: "https://electricity-phi.vercel.app/",
-        github: "#",
-        image: "https://picsum.photos/seed/electricity/800/600",
-        category: "Services",
-        duration: "2024",
-        features: ["Clean Interface", "Usability Focused", "Billing Workflow"]
-    },
-    {
-        id: 4,
-        title: "My Music",
-        description: "Built a music web application with an interactive UI and responsive design.",
-        techStack: ["HTML", "CSS", "JavaScript", "React"],
-        link: "https://my-music-kohl.vercel.app/",
-        github: "#",
-        image: "https://picsum.photos/seed/music/800/600",
-        category: "Entertainment",
-        duration: "2024",
-        features: ["Interactive UI", "Music Catalog", "Responsive Design"]
-    },
-    {
-        id: 5,
         title: "CineCharge",
         description: "Movie-related web application with modern layout and component-based UI.",
         techStack: ["HTML", "CSS", "JavaScript", "React"],
@@ -127,7 +91,7 @@ export const projectsData = [
         features: ["Component-based UI", "Modern Layout", "Movie Database"]
     },
     {
-        id: 6,
+        id: 3,
         title: "TIPS-G Alwar",
         description: "Educational institute website with full-stack backend integration and RESTful APIs for dynamic content management.",
         techStack: ["React.js", "Node.js", "Express.js", "MongoDB"],
@@ -139,7 +103,7 @@ export const projectsData = [
         features: ["Full-Stack Integration", "RESTful APIs", "Dynamic Content Management"]
     },
     {
-        id: 7,
+        id: 4,
         title: "RK Gym",
         description: "A comprehensive fitness and gym management platform featuring a modern UI, workout tracking, and responsive design.",
         techStack: ["React.js", "Tailwind CSS", "Framer Motion"],
@@ -149,5 +113,41 @@ export const projectsData = [
         category: "Fitness",
         duration: "2025",
         features: ["Workout Tracking", "Modern UI", "Animations"]
+    },
+    {
+        id: 5,
+        title: "VisionVault",
+        description: "A luxury eyewear and premium prescription glasses e-commerce platform with elegant design and seamless user experience.",
+        techStack: ["React.js", "Tailwind CSS", "Framer Motion"],
+        link: "https://visionvault-iota.vercel.app/",
+        github: "#",
+        image: "https://picsum.photos/seed/vision/800/600",
+        category: "E-Commerce",
+        duration: "2025",
+        features: ["Premium Catalog", "Prescription Selection", "Elegant UX Design"]
+    },
+    {
+        id: 6,
+        title: "CareerBridge",
+        description: "A modern job portal connecting job seekers with employers, featuring search filters and an applicant dashboard.",
+        techStack: ["React.js", "Node.js", "Express.js", "MongoDB"],
+        link: "https://job-portal-career-bridge.vercel.app/",
+        github: "#",
+        image: "https://picsum.photos/seed/career/800/600",
+        category: "Recruitment",
+        duration: "2025",
+        features: ["Job Posting & Search", "Applicant Tracking", "Interactive Dashboard"]
+    },
+    {
+        id: 7,
+        title: "Block Management System",
+        description: "A management system designed to track and organize administrative block operations and data logs for Code-X Alwar.",
+        techStack: ["React.js", "Tailwind CSS", "Node.js", "MongoDB"],
+        link: "https://block-management-system.vercel.app/",
+        github: "#",
+        image: "https://picsum.photos/seed/block/800/600",
+        category: "Management",
+        duration: "2025",
+        features: ["Block Data Tracking", "Admin Panel", "Status Visualization"]
     }
 ];

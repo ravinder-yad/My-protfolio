@@ -46,28 +46,34 @@ const Projects = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 key={project.id}
-                className="group glass-card rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-500"
+                className="group flex flex-col h-full glass-card rounded-3xl overflow-hidden hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 border border-slate-100 dark:border-slate-800"
               >
-                <div className="relative h-56 overflow-hidden">
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                <div className="relative h-52 overflow-hidden">
+                  <span className="absolute top-4 right-4 z-20 px-3 py-1 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-xs font-semibold rounded-full shadow-sm text-primary border border-slate-100 dark:border-slate-800">
+                    {project.category}
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 z-10"></div>
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
-                  <h3 className="text-xl font-bold mb-3 text-textMain dark:text-white group-hover:text-primary transition-colors">{project.title}</h3>
-                  <div className="flex flex-wrap gap-2 mb-6 flex-grow">
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold mb-2 text-textMain dark:text-white group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                  <p className="text-sm text-textGray dark:text-slate-400 mb-4 line-clamp-2 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-6">
                     {project.techStack.map(tech => (
-                      <span key={tech} className="px-2.5 py-1 bg-blue-50 text-primary text-[10px] font-bold uppercase tracking-wider rounded-md">{tech}</span>
+                      <span key={tech} className="px-2.5 py-1 bg-blue-50/60 dark:bg-slate-800/40 text-primary dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider rounded-md border border-blue-100/30 dark:border-slate-700/30">{tech}</span>
                     ))}
                   </div>
-                  <div className="flex justify-between items-center border-t border-borderGray dark:border-slate-700 pt-4 mt-auto">
+                  <div className="flex justify-between items-center border-t border-borderGray dark:border-slate-800 pt-4 mt-auto">
                     {project.link && project.link !== "#" && (
-                      <a href={project.link} target="_blank" rel="noreferrer" className="flex items-center text-textMain dark:text-white hover:text-primary transition-colors font-medium">
-                        <FaExternalLinkAlt className="mr-2" /> Live
+                      <a href={project.link} target="_blank" rel="noreferrer" className="flex items-center text-textMain dark:text-white hover:text-primary transition-colors font-semibold text-sm group/btn">
+                        <FaExternalLinkAlt className="mr-2 text-xs group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" /> Live Link
                       </a>
                     )}
-                    {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center text-textMain dark:text-white hover:text-primary transition-colors font-medium">
-                        <FaGithub className="mr-2 text-lg" /> Code
+                    {project.github && project.github !== "#" && (
+                      <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center text-textMain dark:text-white hover:text-primary transition-colors font-semibold text-sm group/btn">
+                        <FaGithub className="mr-2 text-base" /> Code
                       </a>
                     )}
                   </div>
